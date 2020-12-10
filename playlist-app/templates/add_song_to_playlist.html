@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Add a song to {{ playlist.name }}</h1>
+
+<form method="POST " class="widget input">
+    {% for field in form%}
+    <!-- ifform.intput_type != 'StringField ' %} -->
+    <div class="form-group row ">
+        <!--  {{field.label(class="col-sm-2 col-form-label ")}}
+        <div class="col-sm-10 ">
+            {{field(class="form-control ")}}
+   
+    </div> -->
+        {{ form.name.label }}
+        <input type="submit">
+    </div> {% endfor %}
+    <button class="btn btn-primary btn-lg ">Lets Add A Song</button>
+</form>
+{%endblock%}
+
+
+
+<!-- <h1>Add a form that when submitted adds a song to this playlist!</h1>
+<form>
+    {% for field in form%}
+    <div><label class="label col-sm-10"><input class="input"></label></div>
+    <div><label class="label col-sm-10"><input class="input"></label></div>
+</form> -->

@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Add a form that when submitted creates a new song!</h1>
+<form method="POST" class="form form-control">
+    {{form.hidden_tag()}} {% for field in form if form.intput_type != 'hidden'%}
+    <div class="form-group row">
+        {{field.label(class="col-sm-2 col-form-label")}}
+        <div class="col-sm-10">
+            {{field(class="form-control")}}
+        </div>
+</form>{%endfor%} {%endblock%}
