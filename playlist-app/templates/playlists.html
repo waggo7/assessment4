@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>See all the playlists!</h1>
+
+<ul>
+    {%if playlist in playlists%} {% for playlist in playlists %}
+    <li>
+        <a class="card-title text-center" href="/playlists/{{playlist.id}}">{{ playlist.name }}</a>
+    </li>
+    {% endfor %}
+    <h1 class="h1 "> New Playlist</h1>
+    <div class="form-group ">
+        <form method="POST " action="/playlists/add ">
+            <div>
+                <label class="input-label">Name The New Playlist
+                <input class="form-control "></label>
+                <label class=" input-label " for="playlist_description ">Give it a little Description</label>
+                <input class="form-control ">
+            </div>
+            <p>
+                <button class="btn btn-primary " action="submit " name="add_playlist ">Add a playlist</button></p>
+
+        </form>
+    </div>
+    {%endif%}
+</ul>
+<p><a class="btn btn-primary " href="/playlists/add ">Add a playlist</a></p>
+{% endblock %}
